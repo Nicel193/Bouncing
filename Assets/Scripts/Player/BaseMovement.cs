@@ -4,36 +4,81 @@ namespace Game.Player
 {
     public class BaseMovement : IMovement
     {
-        private AudioSource _audioSource;
-        private Rigidbody _playerRigidbody;
-        private float _playerSpeed;
-        private float _sphereRadius;
+        private const float rayDistanse = 10f;
+        private const float smoothMovment = 15f;
 
-        public BaseMovement(AudioSource audioSource, Rigidbody playerRigidbody, float playerSpeed, float sphereRadius)
+        private AudioSource _audioSource;
+        private Transform _playerTransform;
+        private float _playerVerticalSpeed;
+        private float _playerHorizontalSpeed;
+        private float _sphereRadius;
+        
+        private Vector3 _startPosition;
+        
+        public BaseMovement(AudioSource audioSource, Transform playerRigidbody,
+            float playerVerticalSpeed, float playerHorizontalSpeed, float sphereRadius)
         {
             _audioSource = audioSource;
-            _playerRigidbody = playerRigidbody;
-            _playerSpeed = playerSpeed;
+            _playerTransform = playerRigidbody;
+            _playerVerticalSpeed = playerVerticalSpeed;
+            _playerHorizontalSpeed = playerHorizontalSpeed;
             _sphereRadius = sphereRadius;
+
+            var position = _playerTransform.position;
+            _startPosition = new Vector3(position.x + _audioSource.time, position.y, position.z);
         }
 
+        
+        //TODO: Change direction
         public void Move(Vector3 direction)
         {
-            direction.Normalize();
-            
-            Physics.Raycast(_playerRigidbody.position, new Vector3(0, 0, direction.z), out RaycastHit hit,
-                5f);
-            
-            Vector3 collisionPoint = hit.point;
-            Vector3 newPosition = new Vector3(_audioSource.time * _playerSpeed, 0,
-                collisionPoint.z - (_sphereRadius * direction.z));
-            
-            float step = 15f * Time.fixedDeltaTime;
-            Vector3 newwPosition = Vector3.MoveTowards(new Vector3(_audioSource.time * _playerSpeed, 0,_playerRigidbody.position.z), newPosition, step);
-            
-            _playerRigidbody.MovePosition(newwPosition);
+            Vector3 newPosition = CalculateMoveForward();
+            Vector3 correctPosition = CalculateChangeWall(newPosition, direction.z);
 
-            Debug.DrawRay(_playerRigidbody.position, new Vector3(0, 0, direction.z), Color.green);
+            _startPosition = _playerTransform.position = correctPosition;
+
+#if UNITY_EDITOR
+            // TestCalculateTime(_playerTransform.position.x);
+            Debug.DrawRay(_playerTransform.position, new Vector3(0, 0, direction.z), Color.green);
+#endif
+        }
+
+        private Vector3 CalculateMoveForward()
+        {
+            float audioTime = _audioSource.time;
+            float newPositionX = audioTime * _playerVerticalSpeed;
+
+            Vector3 newPosition = Vector3.Lerp(_startPosition,
+                new Vector3(newPositionX, _startPosition.y,
+                    _startPosition.z),
+                Time.deltaTime * smoothMovment);
+
+            return newPosition;
+        }
+
+        private Vector3 CalculateChangeWall(Vector3 playerCurrentPosition, float wallDirection)
+        {
+            if (Physics.Raycast(_playerTransform.position, new Vector3(0, 0, wallDirection), out RaycastHit hit,
+                rayDistanse))
+            {
+                Vector3 collisionPoint = hit.point;
+                Vector3 newPosition = new Vector3(playerCurrentPosition.x, playerCurrentPosition.y,
+                    collisionPoint.z - (_sphereRadius * wallDirection));
+
+                float step = _playerHorizontalSpeed * Time.fixedDeltaTime;
+                return Vector3.MoveTowards(playerCurrentPosition, newPosition, step);
+            }
+
+            return playerCurrentPosition;
+        }
+
+        private void TestCalculateTime(float pos)
+        {
+            float currentTimeInUnity = Time.time;
+            float audioSourceTime = _audioSource.time;
+
+            Debug.Log(
+                $"Player Position: {pos}, Unity Time: {currentTimeInUnity}, AudioSource Time: {audioSourceTime}");
         }
     }
 }

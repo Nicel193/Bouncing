@@ -28,8 +28,13 @@ namespace Audio
                 Debug.Log(beatTimes[i]);
                 GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                 //S = V * T
-                sphere.transform.position = new Vector3(((float)beatTimes[i] * PlayerConfig.PlayerSpeed), 0, playerStartPosition.z);
+                sphere.transform.position = new Vector3(((float)beatTimes[i] * PlayerConfig.VerticalPlayerSpeed), 0, playerStartPosition.z);
             }
+        }
+
+        private void Start()
+        {
+            
         }
     }
 
