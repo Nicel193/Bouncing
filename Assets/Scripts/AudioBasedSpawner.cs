@@ -21,7 +21,9 @@ namespace Audio
 
             List<double> beatTimes = beatDetector.DetectBeats(audioFilePath);
 
-            if(beatTimes.Count > 2000) return;
+            Debug.Log(beatTimes.Count);
+            
+            // if(beatTimes.Count > 2000) return;
 
             for (int i = 0; i < beatTimes.Count; i++)
             {
@@ -45,7 +47,7 @@ namespace Audio
     
     public class BeatDetectorBase : IBeatDetector
     {
-        private static double Threshold = 0.15f; // Adjust as needed
+        private static double Threshold = 0.2f; // Adjust as needed
         private static double SamplingRate = 44100; // Adjust to match your audio
 
         public List<double> DetectBeats(string audioFilePath)
@@ -54,8 +56,8 @@ namespace Audio
 
             using (var reader = new AudioFileReader(audioFilePath))
             {
-
-                Debug.Log(reader.TotalTime);
+                // SamplingRate = reader.WaveFormat.SampleRate;
+                
                 int bufferSize = 1024;
                 var buffer = new float[bufferSize];
                 int read;

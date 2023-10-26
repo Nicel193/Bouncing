@@ -1,65 +1,62 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using ObjectPool;
 using UnityEngine;
 
 namespace Map
 {
     public class ChunkPlacer : MonoBehaviour
     {
-        public Transform Player;
-        public Chunk[] ChunkPrefabs;
-        public Chunk FirstChunk;
+        private const int InitialChunkCount = 3;
+        
+        [SerializeField] private Chunk _chunk;
+        [SerializeField] private Transform _player;
+        [SerializeField] private float _spawnChunkOffsetX;
 
-        private List<Chunk> spawnedChunks = new List<Chunk>();
+        private IObjectPool<Chunk> _chunkPull;
+        private List<Chunk> _chunks = new List<Chunk>();
 
         private void Start()
         {
-            spawnedChunks.Add(FirstChunk);
-            SpawnChunk();
+            _chunkPull = new GameObjectPull<Chunk>(_chunk, InitialChunkCount);
+
+            SpawnFirstChunk();
+            
+            for (int i = 0; i < InitialChunkCount; i++) SpawnChunk();
         }
 
         private void Update()
         {
-            float distance = Vector3.Distance(spawnedChunks[spawnedChunks.Count - 1].End.position, Player.position);
-            
-            if (distance <= -10f) SpawnChunk();
-        }
+            float distance = Vector3.Distance(_chunks[^1].End.position, _player.position);
 
-        private void SpawnChunk()
-        {
-            Chunk newChunk = Instantiate(GetRandomChunk());
-            newChunk.transform.position =
-                spawnedChunks[spawnedChunks.Count - 1].End.position - newChunk.Begin.localPosition;
-            spawnedChunks.Add(newChunk);
-
-            if (spawnedChunks.Count >= 3)
+            if (distance <= 10f)
             {
-                Destroy(spawnedChunks[0].gameObject);
-                spawnedChunks.RemoveAt(0);
+                DestroyChunk();
+                SpawnChunk();
             }
         }
 
-        private Chunk GetRandomChunk()
+        private void SpawnFirstChunk()
         {
-            // List<float> chances = new List<float>();
-            // for (int i = 0; i < ChunkPrefabs.Length; i++)
-            // {
-            //     chances.Add(ChunkPrefabs[i].ChanceFromDistance.Evaluate(Player.transform.position.z));
-            // }
-            //
-            // float value = Random.Range(0, chances.Sum());
-            // float sum = 0;
-            //
-            // for (int i = 0; i < chances.Count; i++)
-            // {
-            //     sum += chances[i];
-            //     if (value < sum)
-            //     {
-            //         return ChunkPrefabs[i];
-            //     }
-            // }
-
-            return ChunkPrefabs[0];
+            Chunk newChunk = _chunkPull.Get();
+            newChunk.transform.position = new Vector3(_spawnChunkOffsetX, 0, 0);
+            _chunks.Add(newChunk);
+        }
+        
+        private void SpawnChunk()
+        {
+            Chunk newChunk = _chunkPull.Get();
+            newChunk.transform.position = _chunks[^1].End.position - newChunk.Begin.localPosition;
+        
+            _chunks.Add(newChunk);
+        }
+        
+        private void DestroyChunk()
+        {
+            if (_chunks.Count > 0)
+            {
+                _chunkPull.Return(_chunks[0]);
+                _chunks.RemoveAt(0);
+            }
         }
     }
 }

@@ -6,7 +6,5 @@ namespace Map
     {
         public Transform Begin;
         public Transform End;
-        
-        public AnimationCurve ChanceFromDistance;
     }
 }
