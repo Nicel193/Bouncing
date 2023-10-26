@@ -4,9 +4,15 @@ namespace Game.Player
 {
     public class BaseMovement : IMovement
     {
+        #region Consts
+
         private const float rayDistanse = 10f;
         private const float smoothMovment = 15f;
 
+        #endregion
+
+        public bool IsWalled { get; private set; }
+        
         private AudioSource _audioSource;
         private Transform _playerTransform;
         private float _playerVerticalSpeed;
@@ -62,10 +68,11 @@ namespace Game.Player
                 rayDistanse))
             {
                 Vector3 collisionPoint = hit.point;
-                Vector3 newPosition = new Vector3(playerCurrentPosition.x, playerCurrentPosition.y,
-                    collisionPoint.z - (_sphereRadius * wallDirection));
-
-                float step = _playerHorizontalSpeed * Time.fixedDeltaTime;
+                float edgePlayerPosition = collisionPoint.z - (_sphereRadius * wallDirection);
+                Vector3 newPosition = new Vector3(playerCurrentPosition.x, playerCurrentPosition.y, edgePlayerPosition);
+                
+                IsWalled = playerCurrentPosition.z == edgePlayerPosition;
+                float step = _playerHorizontalSpeed * Time.deltaTime;
                 return Vector3.MoveTowards(playerCurrentPosition, newPosition, step);
             }
 

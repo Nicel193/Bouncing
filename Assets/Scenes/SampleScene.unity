@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chunk: {fileID: 2573391863813020723, guid: 92bac39c1a1164445992aca1030fe8d6, type: 3}
   _player: {fileID: 837056512}
+  _spawnChunkOffsetX: -10
 --- !u!4 &672828227
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &837056509
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -396,7 +397,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: df4e8baf81f2ef04c88fb2fadb965d69, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
