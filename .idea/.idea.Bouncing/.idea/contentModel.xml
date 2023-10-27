@@ -10,12 +10,15 @@
         <e p="Packages" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="Audio" t="Include" />
-          <e p="AudioBasedSpawner.cs" t="Include" />
+          <e p="Audio" t="Include">
+            <e p="BeatDetectorBase.cs" t="Include" />
+            <e p="IBeatDetector.cs" t="Include" />
+          </e>
           <e p="AudioBuffer.cs" t="Include" />
           <e p="Map" t="Include">
             <e p="Chunk.cs" t="Include" />
             <e p="ChunkPlacer.cs" t="Include" />
+            <e p="MapGenerator.cs" t="Include" />
           </e>
           <e p="ObjectPool" t="Include">
             <e p="GameObjectPull.cs" t="Include" />

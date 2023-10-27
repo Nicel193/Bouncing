@@ -1,50 +1,8 @@
-using System;
-using System.Collections.Generic;
-using NAudio.Dsp;
+﻿using System.Collections.Generic;
 using NAudio.Wave;
-using UnityEngine;
-using Game.Player;
 
 namespace Audio
 {
-    public class AudioBasedSpawner : MonoBehaviour
-    {
-        public PlayerConfig PlayerConfig;
-        public Transform Player;
-        
-        private void Awake()
-        {
-            Vector3 playerStartPosition = Player.position;
-
-            IBeatDetector beatDetector = new BeatDetectorBase();
-            string audioFilePath = "./Assets/test2.mp3"; // Замените на путь к вашему аудиофайлу
-
-            List<double> beatTimes = beatDetector.DetectBeats(audioFilePath);
-
-            Debug.Log(beatTimes.Count);
-            
-            // if(beatTimes.Count > 2000) return;
-
-            for (int i = 0; i < beatTimes.Count; i++)
-            {
-                Debug.Log(beatTimes[i]);
-                GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                //S = V * T
-                sphere.transform.position = new Vector3(((float)beatTimes[i] * PlayerConfig.VerticalPlayerSpeed), 0, playerStartPosition.z);
-            }
-        }
-
-        private void Start()
-        {
-            
-        }
-    }
-
-    public interface IBeatDetector
-    {
-        List<double> DetectBeats(string audioFilePath);
-    } 
-    
     public class BeatDetectorBase : IBeatDetector
     {
         private static double Threshold = 0.2f; // Adjust as needed

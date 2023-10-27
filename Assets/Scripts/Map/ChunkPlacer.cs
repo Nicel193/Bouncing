@@ -4,19 +4,21 @@ using UnityEngine;
 
 namespace Map
 {
-    public class ChunkPlacer : MonoBehaviour
+    [System.Serializable]
+    public class ChunkPlacer
     {
         private const int InitialChunkCount = 3;
         
         [SerializeField] private Chunk _chunk;
-        [SerializeField] private Transform _player;
-        [SerializeField] private float _spawnChunkOffsetX;
-
+        [SerializeField] private float _spawnChunkOffsetX = -10f;
+        
+        private Transform _player;
         private IObjectPool<Chunk> _chunkPull;
         private List<Chunk> _chunks = new List<Chunk>();
 
-        private void Start()
+        public void Init(Transform player)
         {
+            _player = player;
             _chunkPull = new GameObjectPull<Chunk>(_chunk, InitialChunkCount);
 
             SpawnFirstChunk();
@@ -24,7 +26,7 @@ namespace Map
             for (int i = 0; i < InitialChunkCount; i++) SpawnChunk();
         }
 
-        private void Update()
+        public void Update()
         {
             float distance = Vector3.Distance(_chunks[^1].End.position, _player.position);
 
