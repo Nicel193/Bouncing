@@ -7,6 +7,16 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Materials" t="Include" />
+        <e p="Models" t="Include">
+          <e p="SimpleCollectiblesPack" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="Models" t="Include" />
+            <e p="Prefabs" t="Include">
+              <e p="Gems" t="Include" />
+            </e>
+            <e p="Textures" t="Include" />
+          </e>
+        </e>
         <e p="Packages" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
@@ -16,6 +26,7 @@
           </e>
           <e p="AudioBuffer.cs" t="Include" />
           <e p="Map" t="Include">
+            <e p="Beat.cs" t="Include" />
             <e p="BeatPlacer.cs" t="Include" />
             <e p="Chunk.cs" t="Include" />
             <e p="ChunkPlacer.cs" t="Include" />
@@ -59,6 +70,28 @@
           </e>
         </e>
         <e p="Textures" t="Include" />
+        <e p="Travis Game Assets" t="Include">
+          <e p="Hit Impact Effects" t="Include">
+            <e p="Demo Scene" t="Include">
+              <e p="Materials" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="HitImpactEffectsPreview.cs" t="Include" />
+              </e>
+              <e p="Textures" t="Include" />
+            </e>
+            <e p="Materials" t="Include">
+              <e p="Guards" t="Include" />
+              <e p="Hits" t="Include" />
+            </e>
+            <e p="Pipeline Upgrade" t="Include" />
+            <e p="Prefabs" t="Include">
+              <e p="Guards" t="Include" />
+              <e p="Hits" t="Include" />
+            </e>
+            <e p="Readme.txt" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Bouncing.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

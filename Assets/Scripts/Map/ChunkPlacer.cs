@@ -9,17 +9,16 @@ namespace Map
     {
         private const int InitialChunkCount = 3;
         
-        [SerializeField] private Chunk _chunk;
         [SerializeField] private float _spawnChunkOffsetX = -10f;
         
         private Transform _player;
         private IObjectPool<Chunk> _chunkPull;
         private List<Chunk> _chunks = new List<Chunk>();
 
-        public void Init(Transform player)
+        public void Init(Transform player, Chunk chunk)
         {
             _player = player;
-            _chunkPull = new MonoObjectPool<Chunk>(_chunk, InitialChunkCount);
+            _chunkPull = new MonoObjectPool<Chunk>(chunk, InitialChunkCount);
 
             SpawnFirstChunk();
             

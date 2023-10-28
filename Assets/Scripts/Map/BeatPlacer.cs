@@ -9,36 +9,51 @@ namespace Map
     [System.Serializable]
     public class BeatPlacer
     {
-        private const int InitBeatCount = 100;
+        private const int InitBeatCount = 30;
         private const float SpawnOffsetPosition = 10f; 
 
         [SerializeField] private PlayerConfig _playerConfig;
-        [SerializeField] private AudioSource _musicAudio;
         [SerializeField] private string _audioFilePath = "./Assets/test2.mp3";
+        [SerializeField] private float _beatOffsetZ;
+        [SerializeField] private float _beatOffsetX;
+        [SerializeField] private Beat _beat;
 
         private List<double> _beatTimes = new List<double>();
-        private List<GameObject> _beats = new List<GameObject>(InitBeatCount);
-        private IObjectPool<GameObject> _beatsPool;
+        private List<Beat> _beats = new List<Beat>(InitBeatCount);
+        private IObjectPool<Beat> _beatsPool;
 
+        private bool _isLeftSide;
         private int _lastBeatIndex;
-        private double _timeLoadOffset = 10f;
-        private double _timePart;
-        private Vector3 _playerStartPosition;
         private Transform _player;
+        private Chunk _chunk;
 
-        public void Init(Transform player)
+        private float _timeToChangeSide;
+        private float _randomTime;
+
+        public void Init(Transform player, Chunk chunk)
         {
             IBeatDetector beatDetector = new BeatDetectorBase();
             _beatTimes = beatDetector.DetectBeats(_audioFilePath);
-            _beatsPool = new GameObjectPool(GameObject.CreatePrimitive(PrimitiveType.Sphere), InitBeatCount);
+            _beatsPool = new MonoObjectPool<Beat>(_beat, InitBeatCount);
             _player = player;
-            _playerStartPosition = _player.position;
+            _chunk = chunk;
+
+            _randomTime = Random.Range(2f, 5f);
         }
 
         public void Update()
         {
             TrySpawnBeat();
             TryDeleteBeat();
+
+            _timeToChangeSide += Time.deltaTime;
+
+            if (_timeToChangeSide >= _randomTime)
+            {
+                _timeToChangeSide = 0;
+                _randomTime = Random.Range(2f, 5f);
+                _isLeftSide = !_isLeftSide;
+            }
         }
 
         /// <summary>
@@ -50,13 +65,14 @@ namespace Map
 
             if (_beatTimes[_lastBeatIndex] * _playerConfig.VerticalPlayerSpeed <= _player.position.x + SpawnOffsetPosition)
             {
-                GameObject sphere = _beatsPool.Get();
+                Beat beat = _beatsPool.Get();
+                float positionZ = (_isLeftSide ? _chunk.LeftWallSide.position.z : _chunk.RightWallSide.position.z); 
                 //S = V * T
-                sphere.transform.position = new Vector3((float) _beatTimes[_lastBeatIndex] * _playerConfig.VerticalPlayerSpeed,
-                    0, _playerStartPosition.z);
-
+                beat.transform.position = new Vector3((float) _beatTimes[_lastBeatIndex] * _playerConfig.VerticalPlayerSpeed + _beatOffsetX,
+                    0, positionZ + (_isLeftSide ? -_beatOffsetZ : _beatOffsetZ));
+                
                 _lastBeatIndex++;
-                _beats.Add(sphere);
+                _beats.Add(beat);
             }
         }
 

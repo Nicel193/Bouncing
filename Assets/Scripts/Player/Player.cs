@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Player
 {
-    // [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody))]
     public class Player : MonoBehaviour
     {
         private const float MoveForwardDirection = 1;
