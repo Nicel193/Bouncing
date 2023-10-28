@@ -8,6 +8,7 @@ namespace ObjectPool
         private readonly Func<T> _preloadFunc;
         private readonly Action<T> _getAction;
         private readonly Action<T> _returnAction;
+        private readonly int _preloadCount;
 
         private Queue<T> _pool = new Queue<T>();
 
@@ -21,10 +22,9 @@ namespace ObjectPool
             _preloadFunc = preloadFunc;
             _getAction = getAction;
             _returnAction = returnAction;
-
-            for (int i = 0; i < preloadCount; i++) Return(_preloadFunc());
+            _preloadCount = preloadCount;
         }
-
+        
         public T Get()
         {
             T item = _pool.Count > 0 ? _pool.Dequeue() : _preloadFunc();
@@ -37,6 +37,11 @@ namespace ObjectPool
         {
             _returnAction(item);
             _pool.Enqueue(item);
+        }
+        
+        protected void SpawnObjects()
+        {
+            for (int i = 0; i < _preloadCount; i++) Return(_preloadFunc());
         }
     }
 }

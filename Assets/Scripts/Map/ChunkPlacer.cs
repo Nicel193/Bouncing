@@ -19,7 +19,7 @@ namespace Map
         public void Init(Transform player)
         {
             _player = player;
-            _chunkPull = new GameObjectPull<Chunk>(_chunk, InitialChunkCount);
+            _chunkPull = new MonoObjectPool<Chunk>(_chunk, InitialChunkCount);
 
             SpawnFirstChunk();
             

@@ -16,14 +16,18 @@
           </e>
           <e p="AudioBuffer.cs" t="Include" />
           <e p="Map" t="Include">
+            <e p="BeatPlacer.cs" t="Include" />
             <e p="Chunk.cs" t="Include" />
             <e p="ChunkPlacer.cs" t="Include" />
             <e p="MapGenerator.cs" t="Include" />
           </e>
           <e p="ObjectPool" t="Include">
-            <e p="GameObjectPull.cs" t="Include" />
+            <e p="GameObjectPool.cs" t="Include" />
             <e p="IObjectPool.cs" t="Include" />
+            <e p="MonoObjectPool.cs" t="Include" />
             <e p="ObjectPool.cs" t="Include" />
+            <e p="ObjectPoolUtils.cs" t="Include" />
+            <e p="ParentObjectCreator.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="BaseMovement.cs" t="Include" />

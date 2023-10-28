@@ -4,14 +4,14 @@ using Object = UnityEngine.Object;
 
 namespace ObjectPool
 {
-    public class GameObjectPull<T> : ObjectPool<T> where T : MonoBehaviour
+    public class MonoObjectPool<T> : ObjectPool<T> where T : MonoBehaviour
     {
-        public GameObjectPull(T @object, int preloadCount) : base(
+        public MonoObjectPool(T @object, int preloadCount) : base(
             () => Preload(@object), GetAction, ReturnAction,
             preloadCount)
         { }
 
-        private static T Preload(T @object) => Object.Instantiate(@object);
+        private static T Preload(T @object) => @object.CreateObject();
         private static void GetAction(T @object) => @object.gameObject.SetActive(true);
         private static void ReturnAction(T @object) => @object.gameObject.SetActive(false);
 

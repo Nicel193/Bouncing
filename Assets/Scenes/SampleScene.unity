@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 672828227}
   - component: {fileID: 672828228}
   m_Layer: 0
-  m_Name: ChunkPlacer
+  m_Name: MapGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,13 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e4a034f0e54b928d7ad3788d08c9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _musicAudio: {fileID: 963194230}
   _player: {fileID: 837056512}
-  _playerConfig: {fileID: 11400000, guid: 3ddc7b2ea68d8a14d85302e345490750, type: 2}
   _chunkPlacer:
     _chunk: {fileID: 2573391863813020723, guid: 92bac39c1a1164445992aca1030fe8d6, type: 3}
     _spawnChunkOffsetX: -10
-  _audioFilePath: ./Assets/test2.mp3
+  _beatPlacer:
+    _playerConfig: {fileID: 11400000, guid: 3ddc7b2ea68d8a14d85302e345490750, type: 2}
+    _musicAudio: {fileID: 963194230}
+    _audioFilePath: ./Assets/test2.mp3
 --- !u!1 &837056508
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,8 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1205f524a63a89746a9da899344b1cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerConfig: {fileID: 11400000, guid: 3ddc7b2ea68d8a14d85302e345490750, type: 2}
-  Player: {fileID: 837056512}
 --- !u!1 &1770325748
 GameObject:
   m_ObjectHideFlags: 0
