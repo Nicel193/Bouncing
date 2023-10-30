@@ -39,6 +39,7 @@ public class GameInstaller : MonoInstaller
     private void BindBeat()
     {
         Container.BindFactory<Beat, Beat.Factory>()
-            .FromComponentInNewPrefab(_beat);
+            .FromComponentInNewPrefab(_beat)
+            .UnderTransformGroup("Beats0");
     }
 }

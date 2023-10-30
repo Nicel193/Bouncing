@@ -8,7 +8,7 @@ namespace ObjectPool
         public static T Preload<T>(T @object) where T : Object 
             => Object.Instantiate(@object, ParentObjectCreator.GetParentObject().transform, true);
         
-        public static T ZenjectPreload<T>(PlaceholderFactory<T> factory) 
+        public static T ZenjectPreload<T>(IFactory<T> factory) 
             => factory.Create();
     }
 }
