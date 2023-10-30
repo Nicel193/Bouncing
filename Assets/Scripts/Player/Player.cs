@@ -1,5 +1,6 @@
-using System;
+using Audio;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Player
 {
@@ -8,17 +9,15 @@ namespace Game.Player
     {
         private const float MoveForwardDirection = 1;
         
-        [SerializeField] private AudioSource _musicAudioSource;
         [SerializeField] private PlayerConfig _playerConfig;
 
         private IMovement _movement;
         private IPlayerInput _playerInput; 
         
-        private void Start() => Construct();
-        
-        private void Construct()
+        [Inject]
+        private void Construct(IMusicPlayer _musicPlayer)
         {
-            _movement = new BaseMovement(_musicAudioSource, 
+            _movement = new BaseMovement(_musicPlayer, 
                 this.transform, 
                 _playerConfig.VerticalPlayerSpeed,
                 _playerConfig.HorizontalPlayerSpeed,

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
 
 namespace Game.Player
 {
@@ -13,7 +14,7 @@ namespace Game.Player
 
         public bool IsWalled { get; private set; }
         
-        private AudioSource _audioSource;
+        private IMusicPlayer _musicPlayer;
         private Transform _playerTransform;
         private float _playerVerticalSpeed;
         private float _playerHorizontalSpeed;
@@ -21,17 +22,17 @@ namespace Game.Player
         
         private Vector3 _startPosition;
         
-        public BaseMovement(AudioSource audioSource, Transform playerRigidbody,
+        public BaseMovement(IMusicPlayer musicPlayer, Transform playerRigidbody,
             float playerVerticalSpeed, float playerHorizontalSpeed, float sphereRadius)
         {
-            _audioSource = audioSource;
+            _musicPlayer = musicPlayer;
             _playerTransform = playerRigidbody;
             _playerVerticalSpeed = playerVerticalSpeed;
             _playerHorizontalSpeed = playerHorizontalSpeed;
             _sphereRadius = sphereRadius;
 
             var position = _playerTransform.position;
-            _startPosition = new Vector3(position.x + _audioSource.time, position.y, position.z);
+            _startPosition = new Vector3(position.x + _musicPlayer.GetCurrentTime(), position.y, position.z);
         }
 
         
@@ -51,7 +52,7 @@ namespace Game.Player
 
         private Vector3 CalculateMoveForward()
         {
-            float audioTime = _audioSource.time;
+            float audioTime = _musicPlayer.GetCurrentTime();
             float newPositionX = audioTime * _playerVerticalSpeed;
 
             Vector3 newPosition = Vector3.Lerp(_startPosition,
@@ -82,7 +83,7 @@ namespace Game.Player
         private void TestCalculateTime(float pos)
         {
             float currentTimeInUnity = Time.time;
-            float audioSourceTime = _audioSource.time;
+            float audioSourceTime = _musicPlayer.GetCurrentTime();
 
             Debug.Log(
                 $"Player Position: {pos}, Unity Time: {currentTimeInUnity}, AudioSource Time: {audioSourceTime}");

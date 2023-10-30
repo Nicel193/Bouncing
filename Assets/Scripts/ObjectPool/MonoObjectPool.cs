@@ -9,7 +9,9 @@ namespace ObjectPool
         public MonoObjectPool(T @object, int preloadCount) : base(
             () => Preload(@object), GetAction, ReturnAction,
             preloadCount)
-        { }
+        {
+            SpawnObjects();
+        }
 
         private static T Preload(T @object) => @object.CreateObject();
         private static void GetAction(T @object) => @object.gameObject.SetActive(true);

@@ -26,16 +26,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d315b16d-cd00-4218-b0a5-3e737f91df3d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Beat.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Beat.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/IMusicPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/IMusicPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicPlayer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatSide.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatSide.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Factory.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Factory/IBeatFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Factory/IBeatFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Zenject.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bouncing/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bouncing/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bouncing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bouncing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Chunk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Chunk.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/Chunk.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/ChunkPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/ChunkPlacer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Beat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Beat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Chunk.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Chunk.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Beat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/Beat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/Beat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/Beat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatPlacer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatPlacer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Map/MapGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Map/MapGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectPool.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectPool/MonoObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectPool/MonoObjectPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BaseMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BaseMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/FollowPlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/FollowPlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +69,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120B8D04-ADD7-4132-9CCD-415C000FB666/66/6c29e9b9/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120B8D04-ADD7-4132-9CCD-415C000FB666/9c/461fe605/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B2EB1CB-56D3-4B3F-8B71-4A74D5FF1C00/c1/aca2185a/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Zenject/GameInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../unity-rhythm-engine/Assets/Scripts/DebugUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4FD4733-E241-41B5-923A-5A4544752539/13/7c09e694/Deque`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75AC3D1C-18A4-4F16-9DB6-46E8DEBEDBA8/88/7e71e29d/BiQuadFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863C8CC6-F078-4064-A86F-825D4E5AF419/3d/6868d909/AudioFileReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/120B8D04-ADD7-4132-9CCD-415C000FB666/fc/e95a252f/IObjectPool`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Map/Factory/BeatFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9B2EB1CB-56D3-4B3F-8B71-4A74D5FF1C00/55/51521bcb/FFTWindow.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -64,14 +85,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SimpleSineGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/IPlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/KeyboardInput.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/FollowPlayerCamera.cs" />
         <option value="$PROJECT_DIR$/../unity-rhythm-engine/Assets/Scripts/DebugUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/AudioBuffer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/IObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/GameObjectPull.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/IMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/BaseMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AudioBasedSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/IBeatDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/BeatDetectorBase.cs" />
@@ -79,15 +97,27 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/MonoObjectPull.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ParentObjectCreator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/GameObjectPool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/MonoObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/ChunkPlacer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Map/MapGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/Beat.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AudioBuffer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/GameObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/MapGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/IMusicPlayerTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/IMusicPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/BaseMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/MusicPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/FollowPlayerCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolUtils.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/MonoObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Zenject/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/Factory/IBeatFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/Factory/BeatFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatSide.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Map/BeatPlacer/BeatPlacer.cs" />
       </list>
     </option>
   </component>
@@ -140,7 +170,9 @@
       <workItem from="1698316431377" duration="23699000" />
       <workItem from="1698438206970" duration="5163000" />
       <workItem from="1698489362134" duration="10239000" />
-      <workItem from="1698518917407" duration="7314000" />
+      <workItem from="1698518917407" duration="8062000" />
+      <workItem from="1698576399724" duration="3684000" />
+      <workItem from="1698668048292" duration="6215000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor player movement">
       <created>1698328835993</created>
@@ -184,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698499249291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add beat object">
+      <created>1698528924299</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698528924299</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,13 +263,18 @@
     <MESSAGE value="Add map generator" />
     <MESSAGE value="Try realize beats generation" />
     <MESSAGE value="Update beat generation and object pool" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update beat generation and object pool" />
+    <MESSAGE value="Add beat object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add beat object" />
   </component>
   <component name="WindowStateProjectService">
     <state width="430" height="436" key="DebuggerActiveHint" timestamp="1698231472236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="430" height="436" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1698231472236" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1698577434039">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1698577434039" />
     <state width="1522" height="31" key="GridCell.Tab.0.bottom" timestamp="1698447221528">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,18 +339,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1522" height="31" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1698447221528" />
-    <state x="479" y="90" key="RiderGenerateDialog" timestamp="1698498121462">
+    <state x="479" y="90" key="RiderGenerateDialog" timestamp="1698674230256">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="90" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1698498121462" />
+    <state x="479" y="90" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1698674230256" />
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1698439993311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1698439993311" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1698499253226">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1698529048251">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1698499253226" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1698529048251" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1698497560377">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -315,13 +359,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="116" width="637" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1698497565045" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1698499093048">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1698673768171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1698499093048" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1698522339420">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1698673768171" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1698669634569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1698522339420" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1698669634569" />
   </component>
 </project>
