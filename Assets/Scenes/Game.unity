@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfde42fc041a8f409df0fb99ee88097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _beat: {fileID: -537371711460969307, guid: c2d9fb5ae00d5c348bdefd99d2f43ddc, type: 3}
   _audioSourceGameMusic: {fileID: 486792325}
   _player: {fileID: 4160703778701332311, guid: fafed5c266515f944855edab69da2ff1, type: 3}
   _playerSpawnPosition: {fileID: 481204892}

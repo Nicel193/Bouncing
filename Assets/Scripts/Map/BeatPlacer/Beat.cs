@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace Map
 {
@@ -18,5 +19,7 @@ namespace Map
             _hitVFX.Play();
             _beatObject.SetActive(false);
         }
+
+        public class Factory : PlaceholderFactory<Beat> { };
     }
 }

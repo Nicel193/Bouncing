@@ -6,14 +6,12 @@ namespace ObjectPool
 {
     public class MonoObjectPool<T> : ObjectPool<T> where T : MonoBehaviour
     {
-        public MonoObjectPool(T @object, int preloadCount) : base(
-            () => Preload(@object), GetAction, ReturnAction,
-            preloadCount)
+        public MonoObjectPool(Func<T> preloadFunk, int preloadCount) : base(preloadFunk, GetAction, 
+            ReturnAction, preloadCount)
         {
             SpawnObjects();
         }
-
-        private static T Preload(T @object) => @object.CreateObject();
+        
         private static void GetAction(T @object) => @object.gameObject.SetActive(true);
         private static void ReturnAction(T @object) => @object.gameObject.SetActive(false);
 

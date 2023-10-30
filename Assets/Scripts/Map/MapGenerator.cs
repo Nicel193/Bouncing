@@ -11,10 +11,12 @@ namespace Map
         [SerializeField] private BeatPlacer _beatPlacer;
 
         [Inject]
-        private void Construct(Player _player)
+        private void Construct(Player _player, Beat.Factory beatFactory)
         {
+            Debug.Log(_player + " " + beatFactory);
+            
             _chunkPlacer.Init(_player.transform, _chunk);
-            _beatPlacer.Init(_player.transform, _chunk);
+            _beatPlacer.Init(_player.transform, _chunk, beatFactory);
         }
         
         private void Update()

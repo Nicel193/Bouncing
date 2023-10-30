@@ -18,7 +18,7 @@ namespace Map
         public void Init(Transform player, Chunk chunk)
         {
             _player = player;
-            _chunkPull = new MonoObjectPool<Chunk>(chunk, InitialChunkCount);
+            _chunkPull = new MonoObjectPool<Chunk>(() => ObjectPoolCreators.Preload(chunk), InitialChunkCount);
 
             SpawnFirstChunk();
             
