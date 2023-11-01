@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Audio;
-using Game.Player;
+using Game.Configs;
 using ObjectPool;
 using UnityEngine;
 
@@ -11,12 +11,10 @@ namespace Map
     {
         private const int InitBeatCount = 30;
         private const float SpawnOffsetPosition = 10f;
-
-        [SerializeField] private PlayerConfig _playerConfig;
+        
         [SerializeField] private string _audioFilePath = "./Assets/test2.mp3";
         [SerializeField] private float _beatOffsetZ;
         [SerializeField] private float _beatOffsetX;
-        [SerializeField] private Beat _beat;
         
         private List<double> _beatTimes = new List<double>();
         private List<Beat> _beats = new List<Beat>(InitBeatCount);
@@ -25,8 +23,9 @@ namespace Map
         private int _lastBeatIndex;
         private Transform _player;
         private BeatSide _beatSide;
+        private PlayerConfig _playerConfig;
         
-        public void Init(Transform player, Chunk chunk, Beat.Factory beatFactory)
+        public void Init(Transform player, Chunk chunk, Beat.Factory beatFactory, PlayerConfig playerConfig)
         {
             IBeatDetector beatDetector = new BeatDetectorBase();
 
@@ -34,6 +33,7 @@ namespace Map
             _beatSide = new BeatSide(_beatOffsetZ, chunk);
             _beatTimes = beatDetector.DetectBeats(_audioFilePath);
             _player = player;
+            _playerConfig = playerConfig;
         }
 
         public void Update()

@@ -1,26 +1,25 @@
 using Audio;
 using UnityEngine;
 using Zenject;
+using Game.Configs;
 
 namespace Game.Player
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
     public class Player : MonoBehaviour
     {
         private const float MoveForwardDirection = 1;
-        
-        [SerializeField] private PlayerConfig _playerConfig;
 
         private IMovement _movement;
         private IPlayerInput _playerInput; 
         
         [Inject]
-        private void Construct(IMusicPlayer _musicPlayer)
+        private void Construct(IMusicPlayer musicPlayer, PlayerConfig playerConfig)
         {
-            _movement = new BaseMovement(_musicPlayer, 
+            _movement = new BaseMovement(musicPlayer, 
                 this.transform, 
-                _playerConfig.VerticalPlayerSpeed,
-                _playerConfig.HorizontalPlayerSpeed,
+                playerConfig.VerticalPlayerSpeed,
+                playerConfig.HorizontalPlayerSpeed,
                 GetComponent<SphereCollider>().radius);
 
             _playerInput = new KeyboardInput();

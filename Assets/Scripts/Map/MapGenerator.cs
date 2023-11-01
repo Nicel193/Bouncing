@@ -1,4 +1,5 @@
-﻿using Game.Player;
+﻿using Game.Configs;
+using Game.Player;
 using UnityEngine;
 using Zenject;
 
@@ -11,12 +12,10 @@ namespace Map
         [SerializeField] private BeatPlacer _beatPlacer;
 
         [Inject]
-        private void Construct(Player _player, Beat.Factory beatFactory)
+        private void Construct(Player _player, Beat.Factory beatFactory, PlayerConfig playerConfig)
         {
-            Debug.Log(_player + " " + beatFactory);
-            
             _chunkPlacer.Init(_player.transform, _chunk);
-            _beatPlacer.Init(_player.transform, _chunk, beatFactory);
+            _beatPlacer.Init(_player.transform, _chunk, beatFactory, playerConfig);
         }
         
         private void Update()

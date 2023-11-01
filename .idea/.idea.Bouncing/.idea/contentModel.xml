@@ -1315,6 +1315,14 @@
             <e p="MusicPlayer.cs" t="Include" />
           </e>
           <e p="AudioBuffer.cs" t="Include" />
+          <e p="Configs" t="Include">
+            <e p="CameraConfig.cs" t="Include" />
+            <e p="PlayerConfig.cs" t="Include" />
+          </e>
+          <e p="Installers" t="Include">
+            <e p="GameInstaller.cs" t="Include" />
+            <e p="GameSettingsInstaller.cs" t="Include" />
+          </e>
           <e p="Map" t="Include">
             <e p="BeatPlacer" t="Include">
               <e p="Beat.cs" t="Include" />
@@ -1341,12 +1349,8 @@
             <e p="IPlayerInput.cs" t="Include" />
             <e p="KeyboardInput.cs" t="Include" />
             <e p="Player.cs" t="Include" />
-            <e p="PlayerConfig.cs" t="Include" />
           </e>
           <e p="SimpleSineGenerator.cs" t="Include" />
-          <e p="Zenject" t="Include">
-            <e p="GameInstaller.cs" t="Include" />
-          </e>
         </e>
         <e p="Test" t="Include">
           <e p="Audio" t="Include" />

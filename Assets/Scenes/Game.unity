@@ -330,7 +330,9 @@ MonoBehaviour:
   _chunkPlacer:
     _spawnChunkOffsetX: -10
   _beatPlacer:
-    _playerConfig: {fileID: 11400000, guid: 3ddc7b2ea68d8a14d85302e345490750, type: 2}
+    _playerConfig:
+      <VerticalPlayerSpeed>k__BackingField: 0
+      <HorizontalPlayerSpeed>k__BackingField: 0
     _audioFilePath: ./Assets/test2.mp3
     _beatOffsetZ: -0.5
     _beatOffsetX: 0.25
@@ -432,9 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1c9ada219c4d5bab6d56ac57e610b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 5
-  height: 10
-  zOffset: -2.5
 --- !u!1 &1194754728
 GameObject:
   m_ObjectHideFlags: 0
