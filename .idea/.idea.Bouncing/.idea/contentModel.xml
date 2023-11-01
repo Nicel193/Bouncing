@@ -20,6 +20,42 @@
         </e>
         <e p="Packages" t="Include" />
         <e p="Plugins" t="Include">
+          <e p="TextMesh Pro" t="Include">
+            <e p="Documentation" t="Include" />
+            <e p="Fonts" t="Include">
+              <e p="LiberationSans - OFL.txt" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="Fonts &amp; Materials" t="Include" />
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Sprite Assets" t="Include" />
+              <e p="Style Sheets" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Mobile.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+            <e p="Sprites" t="Include">
+              <e p="EmojiOne Attribution.txt" t="Include" />
+              <e p="EmojiOne.json" t="Include" />
+            </e>
+          </e>
           <e p="UniRx" t="Include">
             <e p="Examples" t="Include">
               <e p="Sample01_ObservableWWW.cs" t="Include" />
@@ -1305,7 +1341,9 @@
           </e>
         </e>
         <e p="Prefabs" t="Include" />
-        <e p="Resources" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="Music" t="Include" />
+        </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Audio" t="Include">
@@ -1314,10 +1352,13 @@
             <e p="IMusicPlayer.cs" t="Include" />
             <e p="MusicPlayer.cs" t="Include" />
           </e>
-          <e p="AudioBuffer.cs" t="Include" />
           <e p="Configs" t="Include">
             <e p="CameraConfig.cs" t="Include" />
             <e p="PlayerConfig.cs" t="Include" />
+          </e>
+          <e p="Controllers" t="Include">
+            <e p="GameProgressController.cs" t="Include" />
+            <e p="IGameProgressController.cs" t="Include" />
           </e>
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
@@ -1331,7 +1372,11 @@
             </e>
             <e p="Chunk.cs" t="Include" />
             <e p="ChunkPlacer.cs" t="Include" />
+            <e p="LevelLengthTracker.cs" t="Include" />
             <e p="MapGenerator.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include">
+            <e p="GameProgressModel.cs" t="Include" />
           </e>
           <e p="ObjectPool" t="Include">
             <e p="GameObjectPool.cs" t="Include" />
@@ -1342,6 +1387,7 @@
             <e p="ObjectPoolCreators.cs" t="Include" />
             <e p="ParentObjectCreator.cs" t="Include" />
           </e>
+          <e p="Paths.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="BaseMovement.cs" t="Include" />
             <e p="FollowPlayerCamera.cs" t="Include" />
@@ -1350,7 +1396,10 @@
             <e p="KeyboardInput.cs" t="Include" />
             <e p="Player.cs" t="Include" />
           </e>
-          <e p="SimpleSineGenerator.cs" t="Include" />
+          <e p="Views" t="Include">
+            <e p="GameProgressView.cs" t="Include" />
+            <e p="IGameProgressView.cs" t="Include" />
+          </e>
         </e>
         <e p="Test" t="Include">
           <e p="Audio" t="Include" />
@@ -1371,26 +1420,28 @@
           </e>
         </e>
         <e p="Textures" t="Include" />
-        <e p="Travis Game Assets" t="Include">
-          <e p="Hit Impact Effects" t="Include">
-            <e p="Demo Scene" t="Include">
-              <e p="Materials" t="Include" />
-              <e p="Scripts" t="Include">
-                <e p="HitImpactEffectsPreview.cs" t="Include" />
+        <e p="VFXs" t="Include">
+          <e p="Travis Game Assets" t="Include">
+            <e p="Hit Impact Effects" t="Include">
+              <e p="Demo Scene" t="Include">
+                <e p="Materials" t="Include" />
+                <e p="Scripts" t="Include">
+                  <e p="HitImpactEffectsPreview.cs" t="Include" />
+                </e>
+                <e p="Textures" t="Include" />
               </e>
+              <e p="Materials" t="Include">
+                <e p="Guards" t="Include" />
+                <e p="Hits" t="Include" />
+              </e>
+              <e p="Pipeline Upgrade" t="Include" />
+              <e p="Prefabs" t="Include">
+                <e p="Guards" t="Include" />
+                <e p="Hits" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
               <e p="Textures" t="Include" />
             </e>
-            <e p="Materials" t="Include">
-              <e p="Guards" t="Include" />
-              <e p="Hits" t="Include" />
-            </e>
-            <e p="Pipeline Upgrade" t="Include" />
-            <e p="Prefabs" t="Include">
-              <e p="Guards" t="Include" />
-              <e p="Hits" t="Include" />
-            </e>
-            <e p="Readme.txt" t="Include" />
-            <e p="Textures" t="Include" />
           </e>
         </e>
       </e>

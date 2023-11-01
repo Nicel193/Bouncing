@@ -12,5 +12,7 @@ namespace Audio
         public void Play() => _audioSource.Play();
         public void Stop() => _audioSource.Stop();
         public float GetCurrentTime() => _audioSource.time;
+        public float GetFullTime() => _audioSource.clip.length;
+        public string GetMusicName() => _audioSource.clip.name;
     }
 }
