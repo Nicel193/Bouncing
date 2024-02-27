@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Audio;
+﻿using Audio;
 using Game.Configs;
 using Game.Player;
 using UnityEngine;
@@ -14,16 +13,22 @@ namespace Map
         [SerializeField] private BeatPlacer _beatPlacer;
 
         [Inject]
-        private void Construct(Player _player, Beat.Factory beatFactory, PlayerConfig playerConfig, IMusicPlayer musicPlayer)
+        private void Construct(Player _player, Beat.Factory beatFactory, PlayerConfig playerConfig,
+            IMusicPlayer musicPlayer)
         {
-            Debug.Log(Paths.Music + "/" + musicPlayer.GetMusicName());
-            
-            Debug.Log(Resources.Load<AudioClip>( Paths.Music + "/" + musicPlayer.GetMusicName()));
+            string audioPath = GetAudioPath(musicPlayer);
             
             _chunkPlacer.Init(_player.transform, _chunk);
-            _beatPlacer.Init(_player.transform, _chunk, beatFactory, playerConfig);
+            _beatPlacer.Init(_player.transform, _chunk, beatFactory, playerConfig, audioPath);
         }
-        
+
+        private static string GetAudioPath(IMusicPlayer musicPlayer)
+        {
+            string audioPath = "./Assets/Resources/" + Paths.Music + "/" + musicPlayer.GetMusicName() + ".mp3";
+            
+            return audioPath;
+        }
+
         private void Update()
         {
             _chunkPlacer.Update();

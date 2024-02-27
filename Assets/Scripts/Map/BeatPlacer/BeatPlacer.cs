@@ -12,7 +12,6 @@ namespace Map
         private const int InitBeatCount = 30;
         private const float SpawnOffsetPosition = 10f;
         
-        [SerializeField] private string _audioFilePath = "./Assets/test2.mp3";
         [SerializeField] private float _beatOffsetZ;
         [SerializeField] private float _beatOffsetX;
         
@@ -25,13 +24,13 @@ namespace Map
         private BeatSide _beatSide;
         private PlayerConfig _playerConfig;
         
-        public void Init(Transform player, Chunk chunk, Beat.Factory beatFactory, PlayerConfig playerConfig)
+        public void Init(Transform player, Chunk chunk, Beat.Factory beatFactory, PlayerConfig playerConfig, string audioFilePath)
         {
             IBeatDetector beatDetector = new BeatDetectorBase();
 
             _beatsPool = new MonoObjectPool<Beat>(() => ObjectPoolCreators.ZenjectPreload(beatFactory), InitBeatCount);
             _beatSide = new BeatSide(_beatOffsetZ, chunk);
-            _beatTimes = beatDetector.DetectBeats(_audioFilePath);
+            _beatTimes = beatDetector.DetectBeats(audioFilePath);
             _player = player;
             _playerConfig = playerConfig;
         }
